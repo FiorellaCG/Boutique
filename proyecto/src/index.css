@@ -1,0 +1,101 @@
+/* === Estilos específicos para el formulario de registro === */
+
+/* Centrar el contenedor principal */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Centrado vertical completo */
+  padding: 20px;
+}
+
+/* Tarjeta principal */
+.card {
+  background-color: var(--color-blanco);
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  padding: 50px 45px;
+  max-width: 480px;
+  width: 100%;
+  text-align: center; /* Centra el contenido */
+  border: 1px solid var(--color-borde);
+}
+
+/* Título */
+.card h2 {
+  color: var(--color-primario);
+  margin-bottom: 40px;
+  font-size: 1.8rem;
+  letter-spacing: 0.5px;
+}
+
+/* Campos del formulario */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mb-3 {
+  width: 100%;
+  max-width: 360px; /* Define ancho uniforme de los campos */
+  margin-bottom: 18px;
+  text-align: left;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: var(--color-primario);
+  font-size: 15px;
+}
+
+input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--color-borde);
+  background-color: #fcfbfa;
+  font-size: 15px;
+  transition: border-color 0.3s ease, box-shadow 0.2s ease;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--color-secundario);
+  box-shadow: 0 0 6px rgba(167, 139, 113, 0.4);
+}
+
+/* Botón */
+.btn {
+  background-color: #3b2f2f;
+  color: #fff;
+  border: none;
+  padding: 12px 0;
+  width: 100%;
+  max-width: 360px;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+.btn:hover {
+  background-color: #7b5e48;
+  transform: translateY(-2px);
+}
+
+/* Mensaje de alerta */
+.alert {
+  margin-top: 25px;
+  text-align: center;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+
+

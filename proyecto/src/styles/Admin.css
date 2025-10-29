@@ -1,0 +1,161 @@
+.admin-container {
+  background-color: #f9f4ef;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  min-height: 70vh;
+  overflow: hidden;
+}
+
+.admin-title {
+  font-size: 2rem;
+  color: #3d2b1f;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.admin-subtitle {
+  color: #6b4f3f;
+  margin-bottom: 30px;
+  font-size: 1.1rem;
+}
+
+.admin-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.admin-buttons button {
+  background-color: #3d2b1f;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.admin-buttons button:hover {
+  background-color: #5a3c29;
+  transform: translateY(-2px);
+}
+
+.admin-buttons button.active {
+  background-color: #b88965;
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.admin-content {
+  margin-top: 20px;
+  text-align: left;
+  position: relative;
+  min-height: 300px;
+}
+
+.admin-section {
+  background-color: #fffdf9;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.admin-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.admin-form input,
+.admin-form textarea,
+.admin-form select {
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 0.95rem;
+}
+
+.form-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.form-buttons button {
+  background-color: #3d2b1f;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.form-buttons button:hover {
+  background-color: #5a3c29;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.admin-table th,
+.admin-table td {
+  border-bottom: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+.admin-table th {
+  background-color: #f3eae2;
+  color: #3d2b1f;
+}
+
+.admin-table img {
+  border-radius: 6px;
+}
+
+/* 🎨 Estilo general para botones de acción */
+.action-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.action-buttons button {
+  background-color: #3d2b1f;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.action-buttons button:hover {
+  background-color: #5a3c29;
+  transform: translateY(-2px);
+}
+
+/* 🟢 Botón para agregar nuevo elemento */
+.add-button {
+  background-color: #b88965;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.add-button:hover {
+  background-color: #a67254;
+  transform: translateY(-2px);
+}

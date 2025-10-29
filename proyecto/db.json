@@ -1,0 +1,189 @@
+{
+  "usuarios": [
+    {
+      "id": "fc0d",
+      "cedula": "123",
+      "nombre": "Fiorella",
+      "apellidos": "Chaves Gonzalez",
+      "correo": "fiochaves1303@gmail.com",
+      "telefono": "85420362",
+      "direccion": "Desamparados",
+      "contraseña": "O@zCag1sJ2",
+      "rol": "Cliente"
+    },
+    {
+      "id": null,
+      "cedula": "321",
+      "nombre": "Santos",
+      "apellidos": "Chaves Gonzalez",
+      "correo": "santos@gmail.com",
+      "telefono": "85420362",
+      "direccion": "Desamparados",
+      "contraseña": "U2FuMTIzKg==",
+      "rol": "Cliente"
+    }
+  ],
+  "intentosLogin": [
+    {
+      "id": "85f2",
+      "correo": "fiochaves1303@gmail.com",
+      "fecha": "25/10/2025, 21:55:01",
+      "exito": false
+    }
+  ],
+  "clientes": [
+    {
+      "id": null,
+      "nombre": "Santos",
+      "apellidos": "Chaves Gonzalez",
+      "correo": "santos@gmail.com",
+      "telefono": "85420362",
+      "direccion": "Desamparados",
+      "cedula": "321",
+      "idUsuario": null
+    }
+  ],
+  "productos": [
+    {
+      "id": "8051",
+      "nombre": "Camisa blanca",
+      "precio": "7000",
+      "stock": "10",
+      "categoriaId": "171e",
+      "proveedor": "Zara",
+      "imagen": "https://acdn-us.mitiendanube.com/stores/001/301/166/products/1aeadf2a-b06c-4e99-b37a-46858353ea31-28b864dd5aab6c0d3717200552443991-1024-1024.webp"
+    },
+    {
+      "id": "93dd",
+      "nombre": "Vestido blanco y negro con estampado de flores",
+      "precio": "18000",
+      "stock": "15",
+      "categoriaId": "9d53",
+      "proveedor": "Channel",
+      "imagen": "https://http2.mlstatic.com/D_NQ_NP_2X_634136-MLM85054659474_052025-F-vestido-estampado-de-cintura-alta-moderno-y-elegante.webp"
+    },
+    {
+      "id": "31c4",
+      "nombre": "Vestido negro corto",
+      "precio": "15000",
+      "stock": "15",
+      "categoriaId": "9d53",
+      "proveedor": "Channel",
+      "imagen": "https://m.media-amazon.com/images/I/71bAzYAGHJL._AC_UY350_.jpg"
+    },
+    {
+      "id": "af41",
+      "nombre": "Camisa azul con rayas blancas",
+      "precio": "8000",
+      "stock": "15",
+      "categoriaId": "54b2",
+      "proveedor": "Pierre",
+      "imagen": "https://www.macowens.com.ar/media/catalog/product/m/a/macowens-camisa-vestir_44102-001_001.jpg?optimize=high&bg-color=255,255,255&fit=bounds&height=975&width=650&canvas=650:975"
+    },
+    {
+      "id": "9204",
+      "nombre": "Camisa verde",
+      "precio": "9000",
+      "stock": "16",
+      "categoriaId": "54b2",
+      "proveedor": "Pierre",
+      "imagen": "https://http2.mlstatic.com/D_NQ_NP_943540-MLA92802098517_092025-O.webp"
+    },
+    {
+      "id": "c069",
+      "nombre": "Abrigo café largo",
+      "precio": "20000",
+      "stock": "7",
+      "categoriaId": "478a",
+      "proveedor": "Dior",
+      "imagen": "https://img.bestdealplus.com/ae04/kf/H887799d5922045e18692789ee44ebc17R.jpg"
+    },
+    {
+      "id": "6585",
+      "nombre": "Pantalones azul ancho",
+      "precio": "15000",
+      "stock": "8",
+      "categoriaId": "116a",
+      "proveedor": "Zara",
+      "imagen": "https://pantalonesdemezclilla.mx/cdn/shop/files/tiro-alto-novio-azul-mezclilla-jeans-mujer_1.jpg?v=1739286765&width=1445"
+    },
+    {
+      "id": "b4bf",
+      "nombre": "Pantalones crema anchos",
+      "precio": "15000",
+      "stock": "20",
+      "categoriaId": "116a",
+      "proveedor": "Channel",
+      "imagen": "https://img.kwcdn.com/product/fancy/8306a4d5-1497-453e-a0a4-4d709fc6ad7b.jpg?imageView2/2/w/800/q/70/format/webp"
+    },
+    {
+      "id": "b5ff",
+      "nombre": "Camisa manga larga café ",
+      "precio": "15000",
+      "stock": "20",
+      "categoriaId": "171e",
+      "proveedor": "Zara",
+      "imagen": "https://img4.dhresource.com/webp/m/0x0/f3/albu/km/l/10/0bfbd2fc-078e-4e3b-8c40-f2c4dbb95ee1.jpg"
+    },
+    {
+      "id": "669e",
+      "nombre": "Camisa manga larga café ",
+      "precio": "16000",
+      "stock": "22",
+      "categoriaId": "171e",
+      "proveedor": "Dior",
+      "imagen": "https://img.joomcdn.net/0a338d844a8458f5e1aa1744a1d42c144f7bb44b_original.jpeg"
+    },
+    {
+      "id": "0387",
+      "nombre": "Camisa manga larga azul",
+      "precio": "20000",
+      "stock": "22",
+      "categoriaId": "171e",
+      "proveedor": "Dior",
+      "imagen": "https://img.joomcdn.net/892b5868e0f8e54c6ec52240f81e5180c04d91be_original.jpeg"
+    },
+    {
+      "id": "77d0",
+      "nombre": "Camisa manga larga blanca",
+      "precio": "15000",
+      "stock": "10",
+      "categoriaId": "171e",
+      "proveedor": "Dior",
+      "imagen": "https://img.joomcdn.net/1e1dac43e21d74aa3d025cfc3ff08e0309ce9231_original.jpeg"
+    },
+    {
+      "id": "f2b6",
+      "nombre": "Vestido negro elegante",
+      "precio": "24000",
+      "stock": "5",
+      "categoriaId": "9d53",
+      "proveedor": "Channel",
+      "imagen": "https://img.joomcdn.net/77c2f3c5946c28421960390830a889859e80e53f_original.jpeg"
+    }
+  ],
+  "categorias": [
+    {
+      "id": "9d53",
+      "nombre": "Vestidos",
+      "descripcion": "Pan"
+    },
+    {
+      "id": "116a",
+      "nombre": "Pantalones - Mujer",
+      "descripcion": "PAN"
+    },
+    {
+      "id": "171e",
+      "nombre": "Camisa - Mujer"
+    },
+    {
+      "id": "54b2",
+      "nombre": "Camisa - Hombre"
+    },
+    {
+      "id": "478a",
+      "nombre": "Abrigos - Mujer"
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+.categorias-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+.categorias-card {
+  background-color: #fffaf3;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 4px 10px rgba(110, 90, 60, 0.2);
+  width: 90%;
+  max-width: 900px;
+}
+
+.titulo {
+  text-align: center;
+  color: #5a3e2b;
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 20px;
+}
+
+.btn-agregar {
+  background-color: #b58b5d;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-bottom: 15px;
+  transition: 0.3s;
+}
+
+.btn-agregar:hover {
+  background-color: #a07b52;
+}
+
+.tabla-categorias {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabla-categorias th,
+.tabla-categorias td {
+  border: 1px solid #d8c6b0;
+  padding: 10px;
+  text-align: center;
+}
+
+.tabla-categorias th {
+  background-color: #f3e7d3;
+  color: #4a3321;
+}
+
+.btn-editar,
+.btn-eliminar,
+.btn-productos {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  margin: 0 5px;
+  font-size: 16px;
+  transition: 0.2s;
+}
+
+.btn-editar:hover {
+  color: #007bff;
+}
+
+.btn-eliminar:hover {
+  color: #dc3545;
+}
+
+.btn-productos:hover {
+  color: #b58b5d;
+}
