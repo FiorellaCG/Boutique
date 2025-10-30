@@ -8,6 +8,9 @@ const Login = () => {
   const [mensaje, setMensaje] = useState("");
   const navigate = useNavigate();
 
+  // 🔐 Cifrar igual que en el registro
+  const cifrarPassword = (password) => btoa(password);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setMensaje("");
@@ -19,18 +22,34 @@ const Login = () => {
     };
 
     try {
+      // 🔹 Obtener todos los usuarios
       const usuarios = await Services.getDatos("usuarios");
+
+      // 🔹 Buscar usuario con correo y contraseña (ambas cifradas)
       const usuario = usuarios.find(
-        (u) => u.correo === correo && u.contraseña === contraseña
+        (u) =>
+          u.correo === correo &&
+          u.contraseña === cifrarPassword(contraseña)
       );
 
       if (usuario) {
         intento.exito = true;
         setMensaje("✅ Inicio de sesión exitoso.");
+
+        // Guardar intento de login
         await Services.postDatos("intentosLogin", intento);
 
-        // Redirigir a Home después de un pequeño retraso
-        setTimeout(() => navigate("/home"), 1000);
+        // 🔹 Guardar sesión local (opcional)
+        localStorage.setItem("usuarioActivo", JSON.stringify(usuario));
+
+        // 🔹 Redirigir según el rol
+        setTimeout(() => {
+          if (usuario.rol === "Colaborador") {
+            navigate("/admin");
+          } else {
+            navigate("/home");
+          }
+        }, 1500);
       } else {
         setMensaje("❌ Credenciales incorrectas.");
         await Services.postDatos("intentosLogin", intento);
@@ -61,7 +80,9 @@ const Login = () => {
             required
           />
 
-          <button type="submit" className="btn">Iniciar Sesión</button>
+          <button type="submit" className="btn">
+            Iniciar Sesión
+          </button>
         </form>
 
         <div className="links">
@@ -88,4 +109,3 @@ const Login = () => {
 };
 
 export default Login;
-

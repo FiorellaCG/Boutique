@@ -8,18 +8,18 @@
       "correo": "fiochaves1303@gmail.com",
       "telefono": "85420362",
       "direccion": "Desamparados",
-      "contraseña": "O@zCag1sJ2",
+      "contraseña": "qqzUpm$mvr",
       "rol": "Cliente"
     },
     {
-      "id": null,
+      "id": "6c11",
       "cedula": "321",
       "nombre": "Santos",
       "apellidos": "Chaves Gonzalez",
       "correo": "santos@gmail.com",
       "telefono": "85420362",
       "direccion": "Desamparados",
-      "contraseña": "U2FuMTIzKg==",
+      "contraseña": "UGFuMTIzKg==",
       "rol": "Cliente"
     }
   ],
@@ -29,6 +29,30 @@
       "correo": "fiochaves1303@gmail.com",
       "fecha": "25/10/2025, 21:55:01",
       "exito": false
+    },
+    {
+      "id": "2c6a",
+      "correo": "fiochaves1303@gmail.com",
+      "fecha": "29/10/2025, 19:04:13",
+      "exito": false
+    },
+    {
+      "id": "fef0",
+      "correo": "fiochaves1303@gmail.com",
+      "fecha": "29/10/2025, 19:04:44",
+      "exito": true
+    },
+    {
+      "id": "a8d2",
+      "correo": "santos@gmail.com",
+      "fecha": "29/10/2025, 19:06:10",
+      "exito": false
+    },
+    {
+      "id": "7fe9",
+      "correo": "santos@gmail.com",
+      "fecha": "29/10/2025, 19:14:05",
+      "exito": true
     }
   ],
   "clientes": [
@@ -41,6 +65,26 @@
       "direccion": "Desamparados",
       "cedula": "321",
       "idUsuario": null
+    },
+    {
+      "id": null,
+      "nombre": "Santos",
+      "apellidos": "Chaves Gonzalez",
+      "correo": "santos@gmail.com",
+      "telefono": "85420362",
+      "direccion": "Desamparados",
+      "cedula": "321",
+      "idUsuario": null
+    },
+    {
+      "id": "0e99",
+      "nombre": "Santos",
+      "apellidos": "Chaves Gonzalez",
+      "correo": "santos@gmail.com",
+      "telefono": "85420362",
+      "direccion": "Desamparados",
+      "cedula": "321",
+      "idUsuario": "6c11"
     }
   ],
   "productos": [

@@ -1,15 +1,23 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Services from "../../services/Services";
 
 const RecuperarPassword = () => {
   const [correo, setCorreo] = useState("");
   const [mensaje, setMensaje] = useState("");
+  const navigate = useNavigate();
 
+  // 🔑 Generar nueva contraseña aleatoria
   const generarPassword = () => {
-    const caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*";
-    return Array.from({ length: 10 }, () => caracteres[Math.floor(Math.random() * caracteres.length)]).join("");
+    const caracteres =
+      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*";
+    return Array.from({ length: 10 }, () =>
+      caracteres[Math.floor(Math.random() * caracteres.length)]
+    ).join("");
   };
+
+  // 🔐 Cifrar con btoa (mismo formato que en login/registro)
+  const cifrarPassword = (password) => btoa(password);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -24,10 +32,19 @@ const RecuperarPassword = () => {
         return;
       }
 
+      // 🔹 Generar y cifrar nueva contraseña
       const nuevaClave = generarPassword();
-      await Services.putDatos("usuarios", usuario.id, { contraseña: nuevaClave });
+      const nuevaClaveCifrada = cifrarPassword(nuevaClave);
 
+      // 🔹 Actualizar el usuario en el JSON
+      const usuarioActualizado = { ...usuario, contraseña: nuevaClaveCifrada };
+      await Services.putDatos("usuarios", usuario.id, usuarioActualizado);
+
+      // 🔹 Mostrar mensaje
       setMensaje(`✅ Nueva contraseña generada: ${nuevaClave}`);
+
+      // 🔹 Esperar 3 segundos y volver al login
+      setTimeout(() => navigate("/"), 3000);
     } catch (error) {
       setMensaje("❌ Error al recuperar contraseña: " + error.message);
     }
@@ -45,7 +62,9 @@ const RecuperarPassword = () => {
             onChange={(e) => setCorreo(e.target.value)}
             required
           />
-          <button type="submit" className="btn">Recuperar</button>
+          <button type="submit" className="btn">
+            Recuperar
+          </button>
         </form>
 
         <div className="links">
