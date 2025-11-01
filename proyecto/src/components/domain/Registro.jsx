@@ -20,32 +20,32 @@ const Registro = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // ✅ Validar contraseña segura
+  // Validar contraseña segura
   const validarPassword = (password) => {
     const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{6,}$/;
     return regex.test(password);
   };
 
-  // 🔐 Cifrar contraseña
+  // Cifrar contraseña
   const cifrarPassword = (password) => btoa(password);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setMensaje("");
 
-    // 1️⃣ Validar contraseña
+    // Validar contraseña
     if (!validarPassword(formData.contraseña)) {
       setMensaje(
-        "⚠️ La contraseña debe tener mayúsculas, minúsculas, números y un símbolo especial."
+        "La contraseña debe tener mayúsculas, minúsculas, números y un símbolo especial."
       );
       return;
     }
 
     try {
-      // 2️⃣ Obtener usuarios actuales
+      // Obtener usuarios actuales
       const usuarios = await Services.getDatos("usuarios");
 
-      // 3️⃣ Validar que el correo no exista
+      // Validar que el correo no exista
       const existeCorreo = usuarios.find(
         (u) =>
           u.correo &&
@@ -54,21 +54,21 @@ const Registro = () => {
       );
 
       if (existeCorreo) {
-        setMensaje("⚠️ El correo ya está registrado.");
+        setMensaje("El correo ya está registrado.");
         return;
       }
 
-      // 4️⃣ Crear nuevo usuario (rol Cliente por defecto)
+      // Crear nuevo usuario (rol Cliente por defecto)
       const nuevoUsuario = {
         ...formData,
         rol: "Cliente",
         contraseña: cifrarPassword(formData.contraseña),
       };
 
-      // 5️⃣ Guardar en JSON (usuarios)
+      // Guardar en JSON (usuarios)
       const usuarioGuardado = await Services.postDatos("usuarios", nuevoUsuario);
 
-      // 6️⃣ Crear registro en “clientes”
+      // Crear registro en “clientes”
       const nuevoCliente = {
         nombre: usuarioGuardado.nombre,
         apellidos: usuarioGuardado.apellidos,
@@ -81,13 +81,13 @@ const Registro = () => {
 
       await Services.postDatos("clientes", nuevoCliente);
 
-      // 7️⃣ Mensaje y redirección al login
+      // Mensaje y redirección al login
       setMensaje("✅ Usuario registrado correctamente.");
       setTimeout(() => {
         navigate("/login"); // redirige al login
       }, 2000);
 
-      // 8️⃣ Limpiar formulario
+      // Limpiar formulario
       setFormData({
         cedula: "",
         nombre: "",
@@ -99,7 +99,7 @@ const Registro = () => {
       });
     } catch (error) {
       console.error("Error en el registro:", error);
-      setMensaje("❌ Error al registrar usuario: " + error.message);
+      setMensaje("Error al registrar usuario: " + error.message);
     }
   };
 

@@ -8,7 +8,6 @@ const Login = () => {
   const [mensaje, setMensaje] = useState("");
   const navigate = useNavigate();
 
-  // 🔐 Cifrar igual que en el registro
   const cifrarPassword = (password) => btoa(password);
 
   const handleSubmit = async (e) => {
@@ -34,15 +33,15 @@ const Login = () => {
 
       if (usuario) {
         intento.exito = true;
-        setMensaje("✅ Inicio de sesión exitoso.");
+        setMensaje("Inicio de sesión exitoso.");
 
         // Guardar intento de login
         await Services.postDatos("intentosLogin", intento);
 
-        // 🔹 Guardar sesión local (opcional)
+        // Guardar sesión local (opcional)
         localStorage.setItem("usuarioActivo", JSON.stringify(usuario));
 
-        // 🔹 Redirigir según el rol
+        // Redirigir según el rol
         setTimeout(() => {
           if (usuario.rol === "Colaborador") {
             navigate("/admin");
@@ -51,11 +50,11 @@ const Login = () => {
           }
         }, 1500);
       } else {
-        setMensaje("❌ Credenciales incorrectas.");
+        setMensaje("Credenciales incorrectas.");
         await Services.postDatos("intentosLogin", intento);
       }
     } catch (error) {
-      setMensaje("❌ Error al iniciar sesión: " + error.message);
+      setMensaje("Error al iniciar sesión: " + error.message);
     }
   };
 

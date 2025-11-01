@@ -7,7 +7,7 @@ const RecuperarPassword = () => {
   const [mensaje, setMensaje] = useState("");
   const navigate = useNavigate();
 
-  // 🔑 Generar nueva contraseña aleatoria
+  // Generar nueva contraseña aleatoria
   const generarPassword = () => {
     const caracteres =
       "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*";
@@ -16,7 +16,6 @@ const RecuperarPassword = () => {
     ).join("");
   };
 
-  // 🔐 Cifrar con btoa (mismo formato que en login/registro)
   const cifrarPassword = (password) => btoa(password);
 
   const handleSubmit = async (e) => {
@@ -28,25 +27,25 @@ const RecuperarPassword = () => {
       const usuario = usuarios.find((u) => u.correo === correo);
 
       if (!usuario) {
-        setMensaje("❌ No existe una cuenta registrada con ese correo.");
+        setMensaje("No existe una cuenta registrada con ese correo.");
         return;
       }
 
-      // 🔹 Generar y cifrar nueva contraseña
+      // Generar y cifrar nueva contraseña
       const nuevaClave = generarPassword();
       const nuevaClaveCifrada = cifrarPassword(nuevaClave);
 
-      // 🔹 Actualizar el usuario en el JSON
+      // Actualizar el usuario en el JSON
       const usuarioActualizado = { ...usuario, contraseña: nuevaClaveCifrada };
       await Services.putDatos("usuarios", usuario.id, usuarioActualizado);
 
-      // 🔹 Mostrar mensaje
-      setMensaje(`✅ Nueva contraseña generada: ${nuevaClave}`);
+      // Mostrar mensaje
+      setMensaje(`Nueva contraseña generada: ${nuevaClave}`);
 
-      // 🔹 Esperar 3 segundos y volver al login
+      // Esperar 3 segundos y volver al login
       setTimeout(() => navigate("/"), 3000);
     } catch (error) {
-      setMensaje("❌ Error al recuperar contraseña: " + error.message);
+      setMensaje("Error al recuperar contraseña: " + error.message);
     }
   };
 

@@ -6,7 +6,7 @@ import "../../styles/Carrusel.css";
 function ProductCarousel() {
   const [productos, setProductos] = useState([]);
 
-  // 🔹 Cargar productos
+  // Cargar productos
   useEffect(() => {
     (async () => {
       const prods = await Services.getDatos("productos");

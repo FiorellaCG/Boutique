@@ -4,14 +4,14 @@ import Services from "../../services/Services";
 const CategoryList = ({ onAdd, onEdit }) => {
   const [categorias, setCategorias] = useState([]);
 
-  // 🔹 Cargar todas las categorías al montar el componente
+  // Cargar todas las categorías al montar el componente
   useEffect(() => {
     Services.getDatos("categorias")
       .then((data) => setCategorias(data))
       .catch((error) => console.error("Error al obtener categorías:", error));
   }, []);
 
-  // 🔹 Eliminar categoría
+  // Eliminar categoría
   const eliminarCategoria = async (id) => {
     if (window.confirm("¿Deseas eliminar esta categoría?")) {
       await Services.eliminateDatos("categorias", id);
@@ -23,12 +23,10 @@ const CategoryList = ({ onAdd, onEdit }) => {
     <div className="admin-section">
       <h2>Lista de Categorías</h2>
 
-      {/* 🟢 Botón de agregar */}
       <button className="add-button" onClick={onAdd}>
         + Agregar Categoría
       </button>
-
-      {/* 🧾 Tabla de categorías */}
+      
       <table className="admin-table">
         <thead>
           <tr>

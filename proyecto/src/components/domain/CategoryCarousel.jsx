@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { useNavigate } from "react-router-dom";  // 👈 Importante
+import { useNavigate } from "react-router-dom";
 import Services from "../../services/Services";
 import "../../styles/Carrusel.css";
 
 function CategoryCarousel() {
   const [categorias, setCategorias] = useState([]);
   const [productos, setProductos] = useState([]);
-  const navigate = useNavigate(); // 👈 para navegar a otra ruta
+  const navigate = useNavigate(); 
 
-  // 🔹 Cargar categorías y productos
+  // Cargar categorías y productos
   useEffect(() => {
     (async () => {
       const cats = await Services.getDatos("categorias");
@@ -19,7 +19,7 @@ function CategoryCarousel() {
     })();
   }, []);
 
-  // 🔹 Obtener una imagen aleatoria por categoría
+  // Obtener una imagen aleatoria por categoría
   const obtenerImagenCategoria = (categoriaId) => {
     const productosDeCategoria = productos.filter(
       (p) => p.categoriaId === categoriaId && p.imagen
@@ -41,7 +41,7 @@ function CategoryCarousel() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.1 }}
-            onClick={() => navigate(`/categoria/${cat.id}`)} // 👈 Redirige
+            onClick={() => navigate(`/categoria/${cat.id}`)} 
           >
             <div className="category-img-wrapper">
               <img

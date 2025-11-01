@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useParams } from "react-router-dom";
 import Services from "../../services/Services";
-import "../../styles/Carrusel.css"; // reutiliza los mismos estilos
+import "../../styles/Carrusel.css"; 
 
 function CategoryProducts() {
   const { id } = useParams(); // Obtiene el ID de la categoría desde la URL
@@ -17,11 +17,11 @@ function CategoryProducts() {
       const cats = catsResponse.categorias || catsResponse;
       const prods = prodsResponse.productos || prodsResponse;
 
-      // 🔹 Busca la categoría actual por id (en texto)
+      // Busca la categoría actual por id (en texto)
       const categoriaSeleccionada = cats.find((c) => c.id === id);
       setCategoria(categoriaSeleccionada);
 
-      // 🔹 Filtra productos por el campo categoriaId (que es string)
+      // Filtra productos por el campo categoriaId (que es string)
       const productosFiltrados = prods.filter((p) => p.categoriaId === id);
       setProductos(productosFiltrados);
     })();
