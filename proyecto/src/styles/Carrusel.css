@@ -1,4 +1,4 @@
-/* 🔹 CONTENEDOR GENERAL (Categorías y Productos) */
+/* CONTENEDOR GENERAL (Categorías y Productos) */
 .category-carousel {
   width: 100%;
   max-width: 1200px;
@@ -7,7 +7,7 @@
   font-family: "Poppins", sans-serif;
 }
 
-/* 🔹 TÍTULO */
+/* TÍTULO */
 .carousel-title {
   font-size: 2rem;
   font-weight: 700;
@@ -30,14 +30,14 @@
   border-radius: 2px;
 }
 
-/* 🔹 GRID (flexible y responsivo) */
+/* GRID (flexible y responsivo) */
 .carousel-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 80px;
 }
 
-/* 🔹 TARJETA GENÉRICA (para categorías y productos) */
+/* TARJETA GENÉRICA (para categorías y productos) */
 .category-card {
   display: flex;
   flex-direction: column;
@@ -58,7 +58,7 @@
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
 
-/* 🔹 IMAGEN */
+/* IMAGEN */
 .category-img-wrapper {
   width: 100%;
   height: 320px;
@@ -78,7 +78,7 @@
   transform: scale(1.08);
 }
 
-/* 🔹 INFO DEBAJO (para categoría o producto) */
+/* INFO DEBAJO (para categoría o producto) */
 .category-info {
   background-color: #d8b38d;
   width: 100%;
@@ -91,7 +91,7 @@
   margin: 0.3rem 0;
 }
 
-/* 🔹 ESTILOS PARA PRODUCTOS */
+/* ESTILOS PARA PRODUCTOS */
 .product-name {
   font-weight: 600;
   font-size: 1.1rem;
@@ -112,12 +112,12 @@
   opacity: 0.9;
 }
 
-/* 🔹 SCROLL oculto si se usa horizontal */
+/* SCROLL oculto si se usa horizontal */
 .carousel-track::-webkit-scrollbar {
   height: 0;
 }
 
-/* 🔹 ANIMACIÓN GLOBAL DE APARICIÓN */
+/* ANIMACIÓN GLOBAL DE APARICIÓN */
 @keyframes fadeUp {
   from {
     opacity: 0;
@@ -134,7 +134,7 @@
   animation: fadeUp 0.6s ease forwards;
 }
 
-/* 🔹 RESPONSIVE */
+/* RESPONSIVE */
 @media (max-width: 768px) {
   .carousel-title {
     font-size: 1.6rem;
