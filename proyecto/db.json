@@ -12,15 +12,15 @@
       "rol": "Cliente"
     },
     {
-      "id": "6c11",
-      "cedula": "321",
-      "nombre": "Santos",
-      "apellidos": "Chaves Gonzalez",
-      "correo": "santos@gmail.com",
-      "telefono": "85420362",
+      "id": "1",
+      "cedula": "190264837",
+      "nombre": "Maria",
+      "apellidos": "Gonzalaz Hernandez",
+      "correo": "mari@bellasboutique.com",
+      "telefono": "22508782",
       "direccion": "Desamparados",
-      "contraseña": "UGFuMTIzKg==",
-      "rol": "Cliente"
+      "contraseña": "Mari123+",
+      "rol": "Colaborador"
     }
   ],
   "intentosLogin": [
@@ -53,6 +53,48 @@
       "correo": "santos@gmail.com",
       "fecha": "29/10/2025, 19:14:05",
       "exito": true
+    },
+    {
+      "id": "63a2",
+      "correo": "mari1@bellasboutique.com",
+      "fecha": "31/10/2025, 18:47:21",
+      "exito": false
+    },
+    {
+      "id": "2f98",
+      "correo": "mari1@bellasboutique.com",
+      "fecha": "31/10/2025, 18:47:42",
+      "exito": false
+    },
+    {
+      "id": "cbd2",
+      "correo": "mari1@bellasboutique.com",
+      "fecha": "31/10/2025, 18:47:43",
+      "exito": false
+    },
+    {
+      "id": "9acf",
+      "correo": "mari1@bellasboutique.com",
+      "fecha": "31/10/2025, 18:47:53",
+      "exito": false
+    },
+    {
+      "id": "d314",
+      "correo": "mari@bellasboutique.com",
+      "fecha": "31/10/2025, 18:48:33",
+      "exito": false
+    },
+    {
+      "id": "5ae7",
+      "correo": "mari@bellasboutique.com",
+      "fecha": "31/10/2025, 18:48:34",
+      "exito": false
+    },
+    {
+      "id": "43ff",
+      "correo": "mari@bellasboutique.com",
+      "fecha": "31/10/2025, 18:49:10",
+      "exito": false
     }
   ],
   "clientes": [

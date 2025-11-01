@@ -21,10 +21,10 @@ const Login = () => {
     };
 
     try {
-      // 🔹 Obtener todos los usuarios
+      // Obtener todos los usuarios
       const usuarios = await Services.getDatos("usuarios");
 
-      // 🔹 Buscar usuario con correo y contraseña (ambas cifradas)
+      // Buscar usuario con correo y contraseña (ambas cifradas)
       const usuario = usuarios.find(
         (u) =>
           u.correo === correo &&
