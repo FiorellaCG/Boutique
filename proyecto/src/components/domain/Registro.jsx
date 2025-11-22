@@ -12,6 +12,7 @@ const Registro = () => {
     telefono: "",
     direccion: "",
     contraseña: "",
+    rol: "Cliente", // Rol por defecto
   });
 
   const [mensaje, setMensaje] = useState("");
@@ -58,28 +59,29 @@ const Registro = () => {
         return;
       }
 
-      // Crear nuevo usuario (rol Cliente por defecto)
+      // Crear nuevo usuario con el rol seleccionado
       const nuevoUsuario = {
         ...formData,
-        rol: "Cliente",
         contraseña: cifrarPassword(formData.contraseña),
       };
 
       // Guardar en JSON (usuarios)
       const usuarioGuardado = await Services.postDatos("usuarios", nuevoUsuario);
 
-      // Crear registro en “clientes”
-      const nuevoCliente = {
-        nombre: usuarioGuardado.nombre,
-        apellidos: usuarioGuardado.apellidos,
-        correo: usuarioGuardado.correo,
-        telefono: usuarioGuardado.telefono,
-        direccion: usuarioGuardado.direccion,
-        cedula: usuarioGuardado.cedula,
-        idUsuario: usuarioGuardado.id, // id generado por JSON Server
-      };
+      // Solo crear registro en "clientes" si el rol es Cliente
+      if (formData.rol === "Cliente") {
+        const nuevoCliente = {
+          nombre: usuarioGuardado.nombre,
+          apellidos: usuarioGuardado.apellidos,
+          correo: usuarioGuardado.correo,
+          telefono: usuarioGuardado.telefono,
+          direccion: usuarioGuardado.direccion,
+          cedula: usuarioGuardado.cedula,
+          idUsuario: usuarioGuardado.id, // id generado por JSON Server
+        };
 
-      await Services.postDatos("clientes", nuevoCliente);
+        await Services.postDatos("clientes", nuevoCliente);
+      }
 
       // Mensaje y redirección al login
       setMensaje("✅ Usuario registrado correctamente.");
@@ -96,6 +98,7 @@ const Registro = () => {
         telefono: "",
         direccion: "",
         contraseña: "",
+        rol: "Cliente",
       });
     } catch (error) {
       console.error("Error en el registro:", error);
@@ -128,6 +131,13 @@ const Registro = () => {
 
           <label>Contraseña</label>
           <input type="password" name="contraseña" value={formData.contraseña} onChange={handleChange} required />
+
+          <label>Rol</label>
+          <select name="rol" value={formData.rol} onChange={handleChange} required>
+            <option value="Cliente">Cliente</option>
+            <option value="Vendedor">Vendedor</option>
+            <option value="Administrador">Administrador</option>
+          </select>
 
           <button type="submit" className="btn">Registrarse</button>
         </form>

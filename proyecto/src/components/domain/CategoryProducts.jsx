@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import Services from "../../services/Services";
 import "../../styles/Carrusel.css"; 
 
 function CategoryProducts() {
   const { id } = useParams(); // Obtiene el ID de la categoría desde la URL
+  const navigate = useNavigate();
   const [productos, setProductos] = useState([]);
   const [categoria, setCategoria] = useState(null);
 
@@ -57,6 +58,20 @@ function CategoryProducts() {
               <div className="category-info">
                 <p className="product-name">{prod.nombre}</p>
                 <p className="product-price">₡{prod.precio}</p>
+                <button 
+                  className="btn-add-cart"
+                  onClick={() => {
+                    const usuario = JSON.parse(localStorage.getItem("usuarioActivo") || "{}");
+                    if (!usuario.id) {
+                      alert("Debes iniciar sesión para añadir productos al carrito");
+                      navigate("/login");
+                      return;
+                    }
+                    navigate(`/carrito?producto=${prod.id}`);
+                  }}
+                >
+                  Añadir al carrito
+                </button>
               </div>
             </motion.div>
           ))

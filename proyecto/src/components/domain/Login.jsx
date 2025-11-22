@@ -43,7 +43,7 @@ const Login = () => {
 
         // Redirigir según el rol
         setTimeout(() => {
-          if (usuario.rol === "Colaborador") {
+          if (usuario.rol === "Administrador" || usuario.rol === "Vendedor" || usuario.rol === "Colaborador") {
             navigate("/admin");
           } else {
             navigate("/home");

@@ -6,6 +6,7 @@ import CategoryList from "../components/domain/CategoryList";
 import CategoryForm from "../components/domain/CategoryForm";
 import ProductList from "../components/domain/ProductList";
 import ProductForm from "../components/domain/ProductForm";
+import Reportes from "../components/domain/Reportes";
 
 const Admin = () => {
     const navigate = useNavigate();
@@ -84,6 +85,11 @@ const Admin = () => {
                     />
                 );
 
+            case "reportes":
+                return <Reportes />;
+
+            default:
+                return null;
         }
     };
 
@@ -115,6 +121,12 @@ const Admin = () => {
                     onClick={() => setView("products")}
                 >
                     Productos
+                </button>
+                <button
+                    className={view === "reportes" ? "active" : ""}
+                    onClick={() => setView("reportes")}
+                >
+                    Reportes
                 </button>
                 <button
                     onClick={() => navigate("/home")}

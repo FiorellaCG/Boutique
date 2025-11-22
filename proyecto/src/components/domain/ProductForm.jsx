@@ -5,6 +5,7 @@ const ProductForm = ({ productoEdit, onCancel, onSuccess }) => {
   const [categorias, setCategorias] = useState([]);
   const [form, setForm] = useState({
     nombre: "",
+    descripcion: "",
     precio: "",
     stock: "",
     categoriaId: "",
@@ -45,6 +46,15 @@ const ProductForm = ({ productoEdit, onCancel, onSuccess }) => {
           value={form.nombre}
           onChange={handleChange}
           required
+        />
+
+        <label>Descripción:</label>
+        <textarea
+          name="descripcion"
+          value={form.descripcion}
+          onChange={handleChange}
+          rows="3"
+          placeholder="Descripción del producto"
         />
 
         <label>Precio:</label>
