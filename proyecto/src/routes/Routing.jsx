@@ -7,6 +7,10 @@ import Admin from '../pages/Admin';
 import LoginForm from '../pages/LoginForm';
 import ProductCarousel from '../components/domain/ProductCarousel';
 import CategoriaProductos from '../pages/CategoriaProductos';
+import CarritoPage from '../pages/Carrito';
+import PagoPage from '../pages/Pago';
+import FacturaPage from '../pages/Factura';
+import ReportesPage from '../pages/Reportes';
 
 
 function Routing() {
@@ -21,6 +25,10 @@ function Routing() {
         <Route path="/admin" element={<Admin/>}/>
         <Route path="/productos" element={<ProductCarousel/>}/>
         <Route path="/categoria/:id" element={<CategoriaProductos />}/>
+        <Route path="/carrito" element={<CarritoPage/>}/>
+        <Route path="/pago" element={<PagoPage/>}/>
+        <Route path="/factura" element={<FacturaPage/>}/>
+        <Route path="/reportes" element={<ReportesPage/>}/>
       </Routes>
     </Router>
   );

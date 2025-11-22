@@ -271,5 +271,9 @@
       "id": "478a",
       "nombre": "Abrigos - Mujer"
     }
-  ]
+  ],
+  "carritos": [],
+  "pagos": [],
+  "facturas": [],
+  "ventas": []
 }

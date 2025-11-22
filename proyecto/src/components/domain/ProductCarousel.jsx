@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import Services from "../../services/Services";
 import "../../styles/Carrusel.css";
 
 function ProductCarousel() {
+  const navigate = useNavigate();
   const [productos, setProductos] = useState([]);
 
   // Cargar productos
@@ -40,6 +42,20 @@ function ProductCarousel() {
               <p className="product-name">{prod.nombre}</p>
               <p className="product-price">₡{prod.precio?.toLocaleString()}</p>
               <p className="product-category">{prod.categoriaNombre}</p>
+              <button 
+                className="btn-add-cart"
+                onClick={() => {
+                  const usuario = JSON.parse(localStorage.getItem("usuarioActivo") || "{}");
+                  if (!usuario.id) {
+                    alert("Debes iniciar sesión para añadir productos al carrito");
+                    navigate("/login");
+                    return;
+                  }
+                  navigate(`/carrito?producto=${prod.id}`);
+                }}
+              >
+                Añadir al carrito
+              </button>
             </div>
           </motion.div>
         ))}
